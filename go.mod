@@ -2,6 +2,8 @@ module github.com/dominant-strategies/quai-helper
 
 go 1.20
 
+replace github.com/dominant-strategies/go-quai => ../go-quai
+
 require (
 	github.com/dominant-strategies/go-quai v0.6.0-pre.4.0.20230616152455-e02eab483b76
 	github.com/spf13/viper v1.16.0

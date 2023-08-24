@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"context"
 	"fmt"
 	"log"
@@ -73,7 +74,7 @@ func main() {
 	}
 	sliceClients := connectToSlice(config)
 
-	primeBadHash := common.HexToHash("0x00000d94c1dc7347a7c1f5c25cbe684104ec9da4da0898805fa4ce7e449fa80a")
+	primeBadHash := common.HexToHash(os.Args[1])
 	primeBadHeader := sliceClients.PrimeClient.Client.HeaderByHash(context.Background(), primeBadHash)
 	primeTermini := GenerateTermini(sliceClients, 0, 0, primeBadHeader.ParentHash())
 	regionTermini := make([][]common.Hash, common.HierarchyDepth)
